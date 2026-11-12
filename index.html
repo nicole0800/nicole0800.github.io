@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
@@ -21,6 +21,7 @@
     </a>
     <nav class="nav-links" aria-label="Sezioni">
       <a href="#email">Email &amp; Promemoria</a>
+      <a href="#ricerca">Ricerca</a>
       <a href="#trailer">Trailer</a>
       <a href="#funzionalita">Funzionalità</a>
     </nav>
@@ -33,6 +34,7 @@
         <a href="#home">🏠 Home</a>
         <a href="#calendario" data-open-calendar>📅 Calendario</a>
         <a href="#email">📧 Email &amp; Promemoria</a>
+        <a href="#ricerca">🔍 Ricerca nelle cartelle</a>
         <a href="#trailer">🎬 Trailer</a>
         <a href="#funzionalita">✨ Funzionalità</a>
         <a href="#perche">💡 Perché UniFlow</a>
@@ -145,6 +147,31 @@
       </div>
     </section>
 
+    <!-- ===== RICERCA NELLE CARTELLE ===== -->
+    <section class="ricerca wrap" id="ricerca">
+      <header class="section-head reveal">
+        <span class="eyebrow">Ricerca avanzata</span>
+        <h2 class="section-title">Una parola, tutte le cartelle</h2>
+        <p class="section-sub">Scrivi una parola chiave: UniFlow cerca in email, messaggi WhatsApp, file e riunioni e ti mostra tutte le cartelle che la contengono.</p>
+      </header>
+      <div class="search-box reveal">
+        <span class="search-ico" aria-hidden="true">🔍</span>
+        <input id="cerca" type="search" placeholder="Cerca: contratto, Rossi, fattura, #urgente…" autocomplete="off" aria-label="Cerca nelle cartelle">
+        <kbd title="Premi / per cercare">/</kbd>
+      </div>
+      <div class="suggerimenti reveal">
+        <span>Prova:</span>
+        <button class="chip" data-q="contratto">contratto</button>
+        <button class="chip" data-q="fattura">fattura</button>
+        <button class="chip" data-q="Rossi">Rossi</button>
+        <button class="chip" data-q="#urgente">#urgente</button>
+        <button class="chip" data-q="riunione">riunione</button>
+        <button class="chip" data-q="preventivo">preventivo</button>
+      </div>
+      <p class="info-ricerca" id="infoRicerca" aria-live="polite"></p>
+      <div class="cartelle" id="risultatiRicerca"></div>
+    </section>
+
     <!-- ===== TRAILER ===== -->
     <section class="trailer wrap" id="trailer">
       <header class="section-head reveal">
@@ -210,6 +237,7 @@
   </footer>
 
   <div class="toasts" id="toasts" aria-live="polite"></div>
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
+  <script src="ricerca.js?v=2"></script>
 </body>
 </html>
