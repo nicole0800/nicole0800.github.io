@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 150" width="750" height="450">
+  <defs>
+    <linearGradient id="g" gradientUnits="userSpaceOnUse" x1="18" y1="120" x2="230" y2="20">
+      <stop offset="0" stop-color="#2dd4bf"/><stop offset=".45" stop-color="#3b82f6"/>
+      <stop offset=".75" stop-color="#6366f1"/><stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="ga" gradientUnits="userSpaceOnUse" x1="195" y1="40" x2="235" y2="5">
+      <stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#34d399"/>
+    </linearGradient>
+    <mask id="m"><rect width="250" height="150" fill="#fff"/>
+      <path d="M96 112 C118 112 126 94 136 78 C148 58 166 44 208 26" fill="none" stroke="#000" stroke-width="28" stroke-linecap="round"/>
+    </mask>
+  </defs>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path mask="url(#m)" d="M96 34 C116 34 126 50 134 66 C142 84 154 106 180 106 A34 34 0 0 0 206 50" stroke="url(#g)" stroke-width="15"/>
+    <path d="M96 34 L48 34 Q22 34 22 60 L22 88 Q22 112 46 112 L50 112 L44 130 L68 112 L96 112 C118 112 126 94 136 78 C148 58 166 44 208 26.5" stroke="url(#g)" stroke-width="15"/>
+    <path d="M44 56 L66 73 Q70 76 74 73 L96 56" stroke="url(#g)" stroke-width="11"/>
+  </g>
+  <path d="M234 15 L200.6 12.9 L211.5 25 L212.3 40.5 Z" fill="url(#ga)" stroke="url(#ga)" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M181 62 Q183 72 192 74 Q183 76 181 86 Q179 76 170 74 Q179 72 181 62 Z" fill="url(#ga)"/>
+</svg>

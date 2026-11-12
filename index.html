@@ -1,26 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UniFlow</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniFlow – Dal caos al flusso</title>
+  <meta name="description" content="UniFlow: email, WhatsApp e file in un'unica piattaforma intelligente per le aziende.">
+  <link rel="icon" href="assets/logo-icona.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <hr>
-  <h2> UNIFLOW – A  pplicazione per la gestione aziendale delle comunicazioni</h2>
-  <p>
-    Ha l’obiettivo di centralizzare tutte le comunicazioni aziendali in un’unica 
-    piattaforma intelligente, riducendo il caos informativo e migliorando la produttività,
-    garantendo un flusso di lavoro più ordinato e veloce.
-    <br>
-    <h3>CIÒ CHE CI HA SPINTO A FARLO </h3>
-    Nelle aziende le comunicazioni sono spesso frammentate tra e-mail, messaggi, documenti e chat, 
-    causando confusione e perdita di informazioni importanti. I dipendenti devono continuamente cercare file,
-    conversazioni e scadenze attraverso diverse app o strumenti, perdendo tempo e riducendo l’efficienza.
-    <br>
-    Questa applicazione nasce per risolvere questi problemi, offrendo un sistema unico che raccoglie, 
-    organizza e gestisce tutte le comunicazioni aziendali in modo semplice, ordinato e automatico.
-  
-  </p>
+
+  <!-- ===== BARRA IN ALTO: logo + menu Extra ===== -->
+  <header class="topbar" id="home">
+    <a href="#home" class="brand" aria-label="UniFlow – torna su">
+      <img src="assets/logo-icona.svg" alt="" width="54" height="32">
+      <span>UniFlow</span>
+    </a>
+
+    <div class="extra">
+      <button class="extra-btn" id="extraBtn" aria-expanded="false" aria-controls="extraMenu">
+        <span class="hamburger" aria-hidden="true"><i></i><i></i><i></i></span>
+        Extra
+      </button>
+      <nav class="extra-menu" id="extraMenu" hidden>
+        <a href="#home">🏠 Home</a>
+        <a href="#calendario" data-open-calendar>📅 Calendario</a>
+        <a href="#trailer">🎬 Trailer</a>
+        <a href="#funzionalita">✨ Funzionalità</a>
+        <a href="#perche">💡 Perché UniFlow</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== HERO: titolo + elenco a sinistra, alert + calendario a destra ===== -->
+    <section class="hero">
+      <div class="hero-left">
+        <h1 class="hero-logo">
+          <img src="assets/logo-uniflow.png" alt="UniFlow" width="412" height="329">
+        </h1>
+        <p class="tagline">Tutte le comunicazioni della tua azienda. <strong>Un unico flusso.</strong></p>
+
+        <ul class="punti">
+          <li class="reveal">
+            <h3>Inbox unificata</h3>
+            <p>Email, WhatsApp e file in un'unica app, con filtri avanzati e vista panoramica.</p>
+          </li>
+          <li class="reveal">
+            <h3>Priorità automatiche</h3>
+            <p>Alta, media o bassa: capisci subito cosa richiede attenzione immediata.</p>
+          </li>
+          <li class="reveal">
+            <h3>Riassunti con AI</h3>
+            <p>I messaggi lunghi diventano poche righe, così non perdi tempo a leggere tutto.</p>
+          </li>
+          <li class="reveal">
+            <h3>Promemoria intelligenti</h3>
+            <p>L'app legge le email e mette da sola riunioni e scadenze nel calendario.</p>
+          </li>
+        </ul>
+      </div>
+
+      <aside class="hero-right" id="calendario">
+        <!-- Alert scadenze (riempito dal JavaScript) -->
+        <div class="alert" id="alertBox" role="status">
+          <span class="alert-tag">ALERT</span>
+          <p id="alertText">Caricamento scadenze…</p>
+        </div>
+
+        <!-- Calendario interattivo -->
+        <div class="calendar" id="calendarCard">
+          <div class="cal-head">
+            <button class="cal-nav" id="prevMonth" aria-label="Mese precedente">‹</button>
+            <h2 id="monthLabel">Mese</h2>
+            <button class="cal-nav" id="nextMonth" aria-label="Mese successivo">›</button>
+          </div>
+          <div class="cal-week">
+            <span>Lun</span><span>Mar</span><span>Mer</span><span>Gio</span><span>Ven</span><span>Sab</span><span>Dom</span>
+          </div>
+          <div class="cal-grid" id="calGrid"></div>
+          <div class="cal-events" id="dayEvents">
+            <p class="hint">👆 Clicca un giorno per vedere gli impegni</p>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ===== TRAILER ===== -->
+    <section class="trailer reveal" id="trailer">
+      <h2 class="section-title">Trailer app</h2>
+      <p class="section-sub">Guarda in meno di un minuto come UniFlow trasforma il caos in un flusso ordinato.</p>
+      <div class="video-frame">
+        <video src="assets/uniflow-trailer.mp4" poster="assets/copertina-trailer.jpg" controls playsinline preload="metadata"></video>
+      </div>
+    </section>
+
+    <!-- ===== FUNZIONALITÀ ===== -->
+    <section class="funzioni" id="funzionalita">
+      <h2 class="section-title reveal">Tutte le funzionalità</h2>
+      <div class="cards">
+        <article class="card reveal"><span class="ico">🕒</span><h3>Timeline dei progetti</h3><p>Messaggi, file, riunioni e scadenze di ogni cliente in ordine cronologico.</p></article>
+        <article class="card reveal"><span class="ico">✅</span><h3>Cartella "Da fare"</h3><p>Raccoglie in automatico tutte le attività che richiedono un'azione.</p></article>
+        <article class="card reveal"><span class="ico">📊</span><h3>Dashboard</h3><p>Scadenze imminenti, attività completate e file importanti a colpo d'occhio.</p></article>
+        <article class="card reveal"><span class="ico">🔍</span><h3>Ricerca avanzata</h3><p>Tag e categorie per trovare qualsiasi messaggio o file in pochi secondi.</p></article>
+        <article class="card reveal"><span class="ico">📎</span><h3>Avviso file non aperti</h3><p>Ti segnala se un file importante non è ancora stato visualizzato.</p></article>
+        <article class="card reveal"><span class="ico">💬</span><h3>WhatsApp Business</h3><p>Integrazione professionale con backup, filtri e smistamento automatico.</p></article>
+        <article class="card reveal"><span class="ico">📝</span><h3>Note suggerite</h3><p>L'app propone note utili in base al contenuto di ogni messaggio.</p></article>
+        <article class="card reveal"><span class="ico">👥</span><h3>Gestione del team</h3><p>Account per ogni dipendente e chat interne tracciate, anche da remoto.</p></article>
+      </div>
+    </section>
+
+    <!-- ===== PERCHÉ UNIFLOW (testo originale del sito) ===== -->
+    <section class="perche reveal" id="perche">
+      <h2 class="section-title">Ciò che ci ha spinto a farlo</h2>
+      <p>
+        Nelle aziende le comunicazioni sono spesso frammentate tra e-mail, messaggi, documenti e chat,
+        causando confusione e perdita di informazioni importanti. I dipendenti devono continuamente cercare file,
+        conversazioni e scadenze attraverso diverse app o strumenti, perdendo tempo e riducendo l'efficienza.
+      </p>
+      <p>
+        Questa applicazione nasce per risolvere questi problemi, offrendo un sistema unico che raccoglie,
+        organizza e gestisce tutte le comunicazioni aziendali in modo semplice, ordinato e automatico.
+      </p>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER: nomi a sinistra, azienda e sito a destra ===== -->
+  <footer class="footer">
+    <div class="nomi">
+      <span class="label">Realizzato da</span>
+      <p>Nome Cognome · Nome Cognome · Nome Cognome</p>
+    </div>
+    <div class="azienda">
+      <span class="label">Azienda</span>
+      <p><strong>UniFlow</strong> · <a href="https://nicole0800.github.io">nicole0800.github.io</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
